@@ -12,7 +12,7 @@ const ChatRoom = () => {
 
   return (
     <div className="flex">
-      <SideNav onChatRoomClick={handleChatRoomClick} />
+      {/*<SideNav onChatRoomClick={handleChatRoomClick} />*/}
       <div className="flex-1">
         <ChatBox collectionName={collectionName} />
         <SendMessage collectionName={collectionName} />
