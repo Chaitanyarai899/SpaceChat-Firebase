@@ -24,7 +24,7 @@ const ChatRoom = () => {
 
   return (
     <div className="flex">
-      {!isMobile && <SideNav onChatRoomClick={onChatRoomClick} />}
+      {/*!isMobile && <SideNav onChatRoomClick={onChatRoomClick} />*/}
       <div className="flex-1">
         <ChatBox collectionName={collectionName} />
         <SendMessage collectionName={collectionName} />
