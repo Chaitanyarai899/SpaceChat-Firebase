@@ -3,7 +3,7 @@ import { useState } from "react"
 import { UserAuth } from "../context/AuthContext";
 import { db } from "../firebase";
 
-const SendMessage = () => {
+const SendMessage = (props) => {
   const [value, setValue] = useState("");
   const { currentUser } = UserAuth();
   
@@ -17,7 +17,7 @@ const SendMessage = () => {
 
     try {
       const { uid, displayName, photoURL } = currentUser; 
-      await addDoc(collection(db, "messages"), {
+      await addDoc(collection(db, props.collectionName), {
         text: value,
         name: displayName,
         avatar: photoURL,

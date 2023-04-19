@@ -3,7 +3,7 @@ import { collection, query, onSnapshot, orderBy, limit } from "firebase/firestor
 import { useEffect, useRef, useState } from "react";
 import { db } from "../firebase";
 
-const ChatBox = () => {
+const ChatBox = (props) => {
   const messagesEndRef = useRef();
   const [messages, setMassages] = useState([]);
 
@@ -15,7 +15,7 @@ const ChatBox = () => {
 
   useEffect(() => {
     const q = query(
-      collection(db, "messages"),
+      collection(db, props.collectionName),
       orderBy("createdAt"),
       limit(50),
     );
