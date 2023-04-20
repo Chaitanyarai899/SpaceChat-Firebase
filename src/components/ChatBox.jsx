@@ -8,16 +8,16 @@ const ChatBox = (props) => {
   const [messages, setMassages] = useState([]);
 
   const scrollToBottom = () => {
-    messagesEndRef.current.scrollIntoView({ behavior: "smooth"})
+    messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
-  useEffect(scrollToBottom, [messages])
+  useEffect(scrollToBottom, [messages]);
 
   useEffect(() => {
     const q = query(
       collection(db, props.collectionName),
       orderBy("createdAt"),
-      limit(50),
+      limit(50)
     );
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       const messages = [];
@@ -27,19 +27,26 @@ const ChatBox = (props) => {
       setMassages(messages);
     });
 
-    return () => unsubscribe;
-  }, []);
+    return () => unsubscribe();
+  }, [props.collectionName]);
 
   return (
-    <div className="hero min-h-screen bg-base-200" style={{ backgroundImage: `url(https://wallpaperaccess.com/full/17494.jpg)`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
-  <div className="pb-44 pt-20 containerWrap">
-    {messages.map((message) => (
-      <Message key={message.id} message={message} />
-    ))}
-    <div ref={messagesEndRef}></div>
-  </div>
-</div>
-
+    <div
+      className="hero min-h-screen bg-base-200"
+      style={{
+        backgroundImage: `url(https://wallpaperaccess.com/full/17494.jpg)`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundAttachment: "fixed",
+      }}
+    >
+      <div className="pb-44 pt-20 containerWrap">
+        {messages.map((message) => (
+          <Message key={message.id} message={message} />
+        ))}
+        <div ref={messagesEndRef}></div>
+      </div>
+    </div>
   );
 };
 

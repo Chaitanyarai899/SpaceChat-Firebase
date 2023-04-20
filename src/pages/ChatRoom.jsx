@@ -4,7 +4,8 @@ import SendMessage from "../components/SendMessage";
 import SideNav from "../components/SideNav";
 
 const ChatRoom = () => {
-  const [collectionName, setCollectionName] = useState("messages");
+  const [collectionName, setCollectionName] = useState("Nebula");
+  console.log(collectionName)
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -19,15 +20,19 @@ const ChatRoom = () => {
   }, []);
 
   const onChatRoomClick = (name) => {
+    console.log('Selected chat room:', name);
     setCollectionName(name);
+    console.log("helllo world")
   };
+  
+  
 
   return (
     <div className="flex">
-      {/*!isMobile && <SideNav onChatRoomClick={onChatRoomClick} />*/}
+      {!isMobile && <SideNav onChatRoomClick={onChatRoomClick} />}
       <div className="flex-1">
-        <ChatBox collectionName={collectionName} />
-        <SendMessage collectionName={collectionName} />
+      <ChatBox collectionName={collectionName.toString()} />
+      <SendMessage collectionName={collectionName.toString()} />
       </div>
     </div>
   );

@@ -3,9 +3,10 @@ import React from 'react'
 function SideNav(props) {
 
   const handleClick = (name) => {
+    console.log('Clicked on chat room:', name);
     props.onChatRoomClick(name);
   }
-
+  
   return (
     <ul className="menu bg-black border-r border-gray-400 w-56 h-screen fixed left-0 top-0 overflow-y-auto">
       <li className="p-4"><a className="text-white font-bold">Chat Rooms</a></li>
