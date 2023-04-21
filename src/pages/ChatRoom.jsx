@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import ChatBox from "../components/ChatBox";
 import SendMessage from "../components/SendMessage";
 import SideNav from "../components/SideNav";
+import Navbar from "../components/Navbar";
 
 const ChatRoom = () => {
   const [collectionName, setCollectionName] = useState("Nebula");
@@ -27,6 +28,7 @@ const ChatRoom = () => {
 
   return (
     <div className="flex">
+      <Navbar/>
       {!isMobile && <SideNav onChatRoomClick={onChatRoomClick} />}
       <div className="flex-1" style={{ maxWidth: `calc(100% - ${sideNavWidth}px)`, overflow: "auto", marginLeft: sideNavWidth }}>
         <div className="flex flex-col h-full justify-between">
