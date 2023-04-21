@@ -3,6 +3,7 @@ import ChatBox from "../components/ChatBox";
 import SendMessage from "../components/SendMessage";
 import SideNav from "../components/SideNav";
 
+
 const ChatRoom = () => {
   const [collectionName, setCollectionName] = useState("Nebula");
   console.log(collectionName)
@@ -22,7 +23,6 @@ const ChatRoom = () => {
   const onChatRoomClick = (name) => {
     console.log('Selected chat room:', name);
     setCollectionName(name);
-    console.log("helllo world")
   };
   
   

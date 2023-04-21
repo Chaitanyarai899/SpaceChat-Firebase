@@ -2,6 +2,7 @@ import Message from "./Message";
 import { collection, query, onSnapshot, orderBy, limit } from "firebase/firestore";
 import { useEffect, useRef, useState } from "react";
 import { db } from "../firebase";
+import Navbar from  "./Navbar";
 
 const ChatBox = (props) => {
   const messagesEndRef = useRef();
@@ -31,6 +32,8 @@ const ChatBox = (props) => {
   }, [props.collectionName]);
 
   return (
+    <>
+    <Navbar/>
     <div
       className="hero min-h-screen bg-base-200"
       style={{
@@ -40,6 +43,7 @@ const ChatBox = (props) => {
         backgroundAttachment: "fixed",
       }}
     >
+      
       <div className="pb-44 pt-20 containerWrap">
         {messages.map((message) => (
           <Message key={message.id} message={message} />
@@ -47,6 +51,7 @@ const ChatBox = (props) => {
         <div ref={messagesEndRef}></div>
       </div>
     </div>
+    </>
   );
 };
 
