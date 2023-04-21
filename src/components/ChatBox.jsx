@@ -33,7 +33,7 @@ const ChatBox = (props) => {
 
   return (
     <>
-    <Navbar/>
+    
     <div
       className="hero min-h-screen bg-base-200"
       style={{
