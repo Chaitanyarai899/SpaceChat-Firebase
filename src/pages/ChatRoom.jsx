@@ -29,9 +29,11 @@ const ChatRoom = () => {
     <div className="flex">
       {!isMobile && <SideNav onChatRoomClick={onChatRoomClick} />}
       <div className="flex-1" style={{ maxWidth: `calc(100% - ${sideNavWidth}px)`, overflow: "auto", marginLeft: sideNavWidth }}>
-        <div className="flex flex-col h-full">
+        <div className="flex flex-col h-full justify-between">
           <ChatBox collectionName={collectionName.toString()} />
-          <SendMessage collectionName={collectionName.toString()} />
+          <div className="flex justify-center">
+            <SendMessage collectionName={collectionName.toString()} />
+          </div>
         </div>
       </div>
     </div>
