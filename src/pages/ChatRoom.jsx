@@ -5,7 +5,7 @@ import SideNav from "../components/SideNav";
 import Navbar from "../components/Navbar";
 
 const ChatRoom = () => {
-  const [collectionName, setCollectionName] = useState("Nebula");
+  const [collectionName, setCollectionName] = useState("messages");
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
