@@ -32,7 +32,9 @@ const SendMessage = (props) => {
     };
 
     try {
+      if (props.collectionName == "AiChatroom") {
       handleMessage(value);
+      };
       const { uid, displayName, photoURL } = currentUser;
       let imgUrl = null;
       
