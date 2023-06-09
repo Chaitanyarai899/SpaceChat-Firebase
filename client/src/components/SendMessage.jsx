@@ -4,6 +4,8 @@ import { UserAuth } from "../context/AuthContext";
 import { db, storage } from "../firebase";
 import { v4 as uuid } from "uuid";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
+import axios from "axios";
+
 
 const SendMessage = (props) => {
   const [value, setValue] = useState("");
@@ -17,8 +19,20 @@ const SendMessage = (props) => {
       alert("Enter valid message or select an image!");
       return;
     }
+    const handleMessage = async (value) => {
+      try {
+        const response = await axios.post("http://localhost:5000/api/ask", {
+          user_input: value,
+        });
+        console.log(value)
+        console.log(response)
+      } catch (error) {
+        console.log(error);
+      }
+    };
 
     try {
+      handleMessage(value);
       const { uid, displayName, photoURL } = currentUser;
       let imgUrl = null;
       
