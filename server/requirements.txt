@@ -4,3 +4,4 @@ python-dotenv
 flask
 flask_cors
 firebase_admin
+waitress
