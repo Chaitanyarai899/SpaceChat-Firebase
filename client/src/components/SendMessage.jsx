@@ -21,7 +21,7 @@ const SendMessage = (props) => {
     }
     const handleMessage = async (value) => {
       try {
-        const response = await axios.post("https://spacechatai.onrender.com/api/ask", {
+        const response = await axios.post("https://mrchatbotai.onrender.com/api/ask", {
           user_input: value,
         });
         console.log(value)
