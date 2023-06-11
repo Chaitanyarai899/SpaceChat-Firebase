@@ -1,6 +1,12 @@
+import os
 import openai
+from dotenv import load_dotenv
 
-openai.api_key = ""
+
+load_dotenv()
+
+# Get the API key from the environment variables
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 def get_api_response(prompt: str) -> str | None:
     text: str | None = None
