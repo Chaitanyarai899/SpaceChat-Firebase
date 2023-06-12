@@ -12,7 +12,7 @@ const SendMessage = (props) => {
   const [image, setImage] = useState(null);
   const { currentUser } = UserAuth();
   
-  const handleSendMessage = async (e) => {
+  const handleSendMessage = async (e) => { 
     e.preventDefault();
 
     if (value.trim() === "" && !image) {
@@ -24,8 +24,6 @@ const SendMessage = (props) => {
         const response = await axios.post("https://mrchatbotai.onrender.com/api/ask", {
           user_input: value,
         });
-        console.log(value)
-        console.log(response)
       } catch (error) {
         console.log(error);
       }
