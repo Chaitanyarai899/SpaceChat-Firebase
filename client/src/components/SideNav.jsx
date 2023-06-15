@@ -12,7 +12,7 @@ function SideNav(props) {
       <li className="p-4"><a className="text-white font-bold">Chat Rooms</a></li>
       <input type="text" placeholder="Search topics" className="input input-bordered input-primary w-full max-w-xs" />
       <li className="p-4"><a className="block text-white hover:bg-blue-500 hover:text-white transition duration-150"  onClick={() => handleClick("Nebula")}>Nebula</a></li>
-      <li className="p-4"><a className="block text-white hover:bg-blue-500 hover:text-white transition duration-150"  onClick={() => handleClick("AiChatroom")}>Ask-AI</a></li>
+      <li className="p-4"><a className="block text-white hover:bg-blue-500 hover:text-white transition duration-150"  onClick={() => handleClick("AiChatbot")}>Ask-AI</a></li>
       <li className="p-4"><a className="block text-white hover:bg-blue-500 hover:text-white transition duration-150"  onClick={() => handleClick("Andromida Galaxy")}>Andromida Galaxy</a></li>
       <li className="p-4"><a className="block text-white hover:bg-blue-500 hover:text-white transition duration-150" onClick={() => handleClick("Orion's Belt")}>Orion's Belt</a></li>
       <li className="p-4"><a className="block text-white hover:bg-blue-500 hover:text-white transition duration-150" onClick={() => handleClick("messages")}>General</a></li>

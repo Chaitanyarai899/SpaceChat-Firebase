@@ -30,7 +30,7 @@ const SendMessage = (props) => {
     };
 
     try {
-      if (props.collectionName == "AiChatroom") {
+      if (props.collectionName == "AiChatbot") {
       handleMessage(value);
       };
       const { uid, displayName, photoURL } = currentUser;

@@ -8,7 +8,7 @@ app = Flask(__name__)
 cred = credentials.Certificate('key.json')
 default_app = initialize_app(cred)
 db = firestore.client()
-todo_ref = db.collection('AiChatroom')
+todo_ref = db.collection('AiChatbot')
 
 CORS(app)
 
