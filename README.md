@@ -1,6 +1,7 @@
 # SpaceChat
 A chat room app with google authentication where space and sci-fi enthusiasts can connect. The webApp is fully responsive and can be accessed in mobile devices as well.
 The web app is built with firebase, firestore database, react and tailwind CSS for frontend.
+The AI chatbot is availible via a flask microservice.
 
 
 ### Some screenshots of the webApp:
